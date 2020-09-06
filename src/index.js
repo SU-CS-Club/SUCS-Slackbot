@@ -13,7 +13,7 @@ bot.on("start", () => {
     icon_emoji: "::cat",
   };
 
-  bot.postMessageToChannel("general", "Here comes the good stuff", params);
+  console.log("I'm online");
 });
 
 bot.on("error", (error) => console.log(error));
@@ -28,15 +28,27 @@ bot.on("message", (data) => {
 const messageEvent = (text, channel, user) => {
   if (text.includes(" prolang")) {
     /// get programming languages assignments
-    fromText("pl.txt", user);
+    fromText("pl.txt", user, "Programming Languages");
   } else if (text.includes(" comporg")) {
     // get comp org assignments
+    fromText("comp.txt", user, "Computer Organization");
   } else if (text.includes(" cyber")) {
+    fromText("cyber.txt", user, "Cyber Security");
     // get cyber assignments
+  } else if (text.includes(" help")) {
+    bot.postMessage(
+      channel,
+      "The available commands for the assignment bot are: \n prolang \n comporg \n cyber \n @ the bot and type one of these commands to get the next three assignments due in the course you entered sent to you via dm. You can then set reminders on that message for additional notifications for the assignments."
+    );
+  } else {
+    bot.postMessage(
+      channel,
+      "That isn't a valid command, use one of the following commands: help, prolang, comporg, or cyber"
+    );
   }
 };
 
-function fromText(textFile, user) {
+function fromText(textFile, user, classText) {
   fs.readFile(textFile, (err, data) => {
     if (err) {
       console.log(error);
@@ -49,7 +61,7 @@ function fromText(textFile, user) {
     });
     bot.postMessage(
       user,
-      `The upcoming assignments for Programming language are: \n ${assignmentString}`
+      `The upcoming assignments for ${classText} are: \n ${assignmentString}`
     );
   });
 }
