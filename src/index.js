@@ -9,10 +9,6 @@ const bot = new SlackBot({
 });
 
 bot.on("start", () => {
-  const params = {
-    icon_emoji: "::cat",
-  };
-
   console.log("I'm online");
 });
 
@@ -22,7 +18,12 @@ bot.on("message", (data) => {
   if (data.type !== "message") {
     return;
   }
-  messageEvent(data.text, data.channel, data.user);
+
+  const commandCheck = data.text.split(" ");
+  console.log(commandCheck);
+  if (commandCheck[0].indexOf("!") === 0) {
+    messageEvent(data.text, data.channel, data.user);
+  }
 });
 
 const messageEvent = (text, channel, user) => {
@@ -38,7 +39,7 @@ const messageEvent = (text, channel, user) => {
   } else if (text.includes(" help")) {
     bot.postMessage(
       channel,
-      "The available commands for the assignment bot are: \n prolang \n comporg \n cyber \n @ the bot and type one of these commands to get the next three assignments due in the course you entered sent to you via dm. You can then set reminders on that message for additional notifications for the assignments."
+      "The available commands for the assignment bot are: \n! prolang \n! comporg \n! cyber \nType one of these commands to get the next three assignments due in the course you entered sent to you via dm. You can then set reminders on that message for additional notifications for the assignments."
     );
   } else {
     bot.postMessage(
