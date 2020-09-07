@@ -20,7 +20,6 @@ bot.on("message", (data) => {
   }
 
   const commandCheck = data.text.split(" ");
-  console.log(commandCheck);
   if (commandCheck[0].indexOf("!") === 0) {
     messageEvent(data.text, data.channel, data.user);
   }
