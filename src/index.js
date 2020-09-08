@@ -19,9 +19,11 @@ bot.on("message", (data) => {
     return;
   }
 
-  const commandCheck = data.text.split(" ");
-  if (commandCheck[0].indexOf("!") === 0) {
-    messageEvent(data.text, data.channel, data.user);
+  if (data.text.split(" ")) {
+    const commandCheck = data.text.split(" ");
+    if (commandCheck[0].indexOf("!") === 0) {
+      messageEvent(data.text, data.channel, data.user);
+    }
   }
 });
 
