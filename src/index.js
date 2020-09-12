@@ -22,7 +22,12 @@ bot.on("message", (data) => {
   if (data.text.split(" ")) {
     const commandCheck = data.text.split(" ");
     if (commandCheck[0].indexOf("!") === 0) {
+      console.log(
+        `${data.user} made request ${data.text} from ${data.channel}`
+      );
       messageEvent(data.text, data.channel, data.user);
+    } else {
+      return;
     }
   }
 });
@@ -45,7 +50,7 @@ const messageEvent = (text, channel, user) => {
   } else {
     bot.postMessage(
       channel,
-      "That isn't a valid command, use one of the following commands: help, prolang, comporg, or cyber"
+      `That isn't a valid command, use one of the following commands: "! help", "! prolang","! comporg", or "! cyber"`
     );
   }
 };
