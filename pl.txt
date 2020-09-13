@@ -1,4 +1,5 @@
-Friday - September 11 by 11:59PM - Introduction to git due, moodle submit
-Monday - September 14 - Chapter 2 Read/Respond due by 10pm - Perusall
-Tuesday - September 15 - P1 Java Overview due & Research paper preference quiz - Moodle submit
+Monday  -  September 14 - Chapter 2 Read/Respond due by 10pm - Perusall
+Tuesday -  September 15 - P1 Java Overview due & Research paper preference quiz - Moodle submit
 Thursday - September 17 - Video Quiz before class - Moodle Submit
+Friday -   September 18 - Java Overview due - Github
+Monday -   September 21 - Chapter 3 Read/Responde due by 10pm - Perusall
