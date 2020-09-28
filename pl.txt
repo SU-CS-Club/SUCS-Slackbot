@@ -1,5 +1,3 @@
-Monday  -  September 14 - Chapter 2 Read/Respond due by 10pm - Perusall
-Tuesday -  September 15 - Research paper preference quiz - Moodle submit
-Thursday - September 17 - Video Quiz before class - Moodle Submit
-Friday -   September 18 - Java Overview due - Github
-Monday -   September 21 - Chapter 3 Read/Respond due by 10pm - Perusall
+Monday  -  September 29 - Video quiz - Moodle submit
+Thursday - October 1    - HW2 due
+Friday -   October 2    - Common Lisp Overview due - Github
